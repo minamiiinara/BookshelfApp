@@ -8,31 +8,35 @@
     <title>My Bookshelf</title>
   </head>
   <body class="bg-gray-900">
-    <main class="flex flex-col items-center justify-center">
-      <h1 class="text-ijo font-bold mt-6 py-5 text-3xl">My Bookshelf</h1>
-      <div type="searchbar" class="flex w-[50vw] px-2">
-        <input
-          type="text"
-          name="search"
-          id="search"
-          placeholder="Search in bookshelf"
-          class="w-full rounded px-6 py-2 bg-slate-800 text-white hover:border hover:outline-none hover:border-ijo/20 hover:ring-ijo/20 focus:outline-none focus:ring-ijo focus:ring-1"
-        />
-        <button
-          class="bg-ijo hover:bg-ijo/80 rounded ml-2 px-5 font-bold text-white"
-          id="searchButton"
-        >
-          Search
-        </button>
-      </div>
-      <div class="flex space-x-4 md:flex-col">
+    <main>
+        <h1 class="text-ijo  font-bold mt-6 py-5 text-xl text-center md:text-3xl">My Bookshelf</h1>
+        <div type="searchbar" class="flex justify-center">
+          <div>
+            <input
+              type="text"
+              name="search"
+              id="search"
+              placeholder="Search in bookshelf"
+              class="w-38 text-sm rounded px-4 py-2 bg-slate-800 text-white hover:border hover:outline-none hover:border-ijo/20 hover:ring-ijo/20 focus:outline-none focus:ring-ijo focus:ring-1 md:w-96"
+            />
+          </div>
+          <div>
+            <button
+              class="bg-ijo hover:bg-ijo/80 rounded px-6 py-2 ml-2 font-bold text-white text-sm"
+              id="searchButton"
+            >
+              Search
+            </button>
+          </div>
+        </div>
+      <div class="md:flex justify-center">
         <!-- TAMBAH BUKU  -->
         <form action="#" class="form" id="form">
 
           <div
-            type="addbookcard"
-            class="mt-6 border border-gray-600 rounded items-center p-10"
-          >
+                type="addbookcard"
+                class="rounded items-center p-5 md:border border-gray-600 mt-5"
+            >
             <h2 class="text-ijo font-bold mt-5 mb-5 text-xl mx-auto">Add new book</h2>
             <div class="flex">
               <div>
@@ -47,7 +51,7 @@
                     name="title"
                     id="title"
                     placeholder="Enter book title"
-                    class="w-96 rounded px-6 py-2 bg-slate-800 text-white hover:border hover:outline-none hover:border-ijo/20 hover:ring-ijo/20 focus:outline-none focus:ring-ijo focus:ring-1"
+                    class="w-80 rounded text-sm px-6 py-2 bg-slate-800 text-white hover:border hover:outline-none hover:border-ijo/20 hover:ring-ijo/20 focus:outline-none focus:ring-ijo focus:ring-1 md:w-60"
                     required
                   />
                 </div>
@@ -66,7 +70,7 @@
                     name="author"
                     id="author"
                     placeholder="Enter book author"
-                    class="w-96 rounded px-6 py-2 bg-slate-800 text-white hover:border hover:outline-none hover:border-ijo/20 hover:ring-ijo/20 focus:outline-none focus:ring-ijo focus:ring-1"
+                    class="w-80 rounded text-sm px-6 py-2 bg-slate-800 text-white hover:border hover:outline-none hover:border-ijo/20 hover:ring-ijo/20 focus:outline-none focus:ring-ijo focus:ring-1 md:w-60"
                     required
                   />
                 </div>
@@ -76,7 +80,7 @@
               <div>
                 <label
                   for="year"
-                  class="block text-sm font-medium leading-6 text-ijo/60"
+                  class="block text-sm leading-6 text-ijo/60"
                   >Book Year</label
                 >
                 <div>
@@ -85,7 +89,7 @@
                     name="year"
                     id="year"
                     placeholder="Enter book year"
-                    class="w-96 rounded px-6 py-2 bg-slate-800 text-white hover:border hover:outline-none hover:border-ijo/20 hover:ring-ijo/20 focus:outline-none focus:ring-ijo focus:ring-1"
+                    class="w-80 text-sm rounded px-6 py-2 bg-slate-800 text-white hover:border hover:outline-none hover:border-ijo/20 hover:ring-ijo/20 focus:outline-none focus:ring-ijo focus:ring-1 md:w-60"
                     required
                   />
                 </div>
@@ -99,13 +103,13 @@
                   id="checkbox1"
                   value="checkbox1"
                 />
-                <label for="checkbox1" class="text-ijo/70 ml-2">Have Read</label>
+                <label for="checkbox1" class="text-ijo/70 font-bold ml-2">Have Read</label>
               </div>
             </div>
             <div class="flex w-full mt-5">
               <input
                 value="Add to Bookshelf"
-                class="bg-ijo hover:bg-ijo/80 font-bold text-white w-full rounded py-2 mb-7"
+                class="bg-ijo/90 hover:bg-ijo/50 font-bold text-white rounded py-2 px-9 mb-7"
                 type="submit"
                 name="Submit"
               />
@@ -115,22 +119,31 @@
         <!-- END OF TAMBAH BUKU  -->
         <div
         type="notRead"
-        class="mt-6 border border-gray-600 rounded items-center p-10"
+        class="items-center ml-0 md:border md:ml-5 border-gray-600 mt-5 rounded p-5"
         >
         <h2 class="text-ijo font-bold mt-5 mb-5 text-xl mx-auto">Have not read</h2>
-        <div class="list-item" id="uncompleted-books"></div>
+        <div class="list-item list-none" id="uncompleted-books"></div>
       </div>
+
       <!-- END OF BELUM DIBACA  -->
       <div
         type="haveRead"
-        class="mt-6 border border-gray-600 rounded items-center p-10"
+        class="items-center  ml-0 md:border md:ml-5 border-gray-600 mt-5 rounded p-5"
       >
-        <h2 class="text-ijo font-bold mb-5 mt-5 text-xl mx-auto">Have read</h2>
-        <div class="list-item" id="completed-books"></div>
+        <h2 class="text-ijo font-bold mb-5 mt-16 text-xl mx-auto md:mt-5">Have read</h2>
+        <div class="list-item list-none" id="completed-books"></div>
       </div>
       <!-- END OF SUDAH DIBACA  -->
       </div>
     </main>
     <script src="js/script.js" type="text/javascript"></script>
   </body>
+  
+<footer class="bg-white rounded-lg shadow m-4 dark:bg-gray-800">
+  <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://github.com/minamiiinara" class="hover:underline">minamiiinara™</a>. All Rights Reserved.
+  </span>
+  </div>
+</footer>
+
 </html>

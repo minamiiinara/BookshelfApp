@@ -87,14 +87,14 @@ function makeBook(bookObject) {
   
       const markAsUnreadButton = document.createElement('button');
       markAsUnreadButton.innerText = 'Mark as Unread';
-      markAsUnreadButton.classList.add('bg-ijo', 'hover:bg-ijo/80', 'rounded', 'px-6', 'py-2', 'mt-5', 'font-bold', 'text-white');
+      markAsUnreadButton.classList.add('bg-ijo', 'hover:bg-ijo/80', 'rounded', 'px-6', 'py-2', 'mt-5', 'font-bold', 'text-white', 'md:justify-start');
       markAsUnreadButton.addEventListener('click', function () {
         undoBookFromCompleted(id);
       });
   
       const deleteButton = document.createElement('button');
       deleteButton.innerText = 'Delete';
-      deleteButton.classList.add('border', 'border-ijo', 'hover:bg-ijo/80', 'rounded', 'px-6', 'py-2', 'ml-2', 'mt-5', 'font-bold', 'text-white');
+      deleteButton.classList.add('border', 'border-ijo', 'hover:bg-ijo/80', 'rounded', 'px-6', 'py-2', 'ml-2', 'mt-5', 'font-bold', 'text-white', 'md:justify-end');
       deleteButton.addEventListener('click', function () {
         showDeleteConfirmation(bookObject.id);
       });
